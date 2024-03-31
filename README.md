@@ -66,7 +66,7 @@ Endpoint: /atef
 Description: Updates the fees for air temperature fees (ATE), but these fees are not used directly in fee calculations without additional conditions in DeliveryService.
 Request Body: ATEFFeesDTO containing vehicle, temperature, and fee information.
 
-5.Update WSEF
+5. Update WSEF
 Method: PUT
 Endpoint: /wsef
 Description: Updates the fees for WSEFFees, but these fees are not used directly in fee calculations without additional conditions in DeliveryService.
