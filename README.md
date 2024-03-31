@@ -33,49 +33,49 @@ Every single requests is sent in a form http://localhost:8080/ + {endpointName},
 Endpoints:
 
 1. Retrieve Delivery Fee by City and Vehicle
-Method: GET
-Endpoint: /{city}/{vehicle}
-Description: Retrieves the fee for delivery based on the specified city and vehicle type.
-Parameters:
-city (String): The city for delivery.
-vehicle (String): The type of vehicle used for delivery.
-Returns: The total fee for delivery.
-Throws: IOException if an invalid city or vehicle is entered.
-Retrieve Delivery Fee by City, Vehicle, and Date
+Method: GET <br/>
+Endpoint: /{city}/{vehicle} <br/>
+Description: Retrieves the fee for delivery based on the specified city and vehicle type.<br/>
+Parameters:<br/>
+* city (String): The city for delivery.
+* vehicle (String): The type of vehicle used for delivery.
+Returns: The total fee for delivery.<br/>
+Throws: IOException if an invalid city or vehicle is entered.<br/>
+Retrieve Delivery Fee by City, Vehicle, and Date<br/>
 
 2. Retrieve Delivery Fee by City and Vehicle and Date
-Method: GET
-Endpoint: /{city}/{vehicle}/{date}
-Description: Retrieves the fee for delivery based on the specified city, vehicle type, and delivery date.
+Method: GET<br/>
+Endpoint: /{city}/{vehicle}/{date}<br/>
+Description: Retrieves the fee for delivery based on the specified city, vehicle type, and delivery date.<br/>
 Parameters:
-city (String): The city for delivery.
-vehicle (String): The type of vehicle used for delivery.
-date (Optional, LocalDateTime (format: yyyy-MM-dd-HH-mm-ss): The date and time of delivery.
-Returns: The total fee for delivery.
+* city (String): The city for delivery.
+* vehicle (String): The type of vehicle used for delivery.
+* date (Optional, LocalDateTime (format: yyyy-MM-dd-HH-mm-ss): The date and time of delivery.
+Returns: The total fee for delivery.<br/>
 
 3. Update RBF
-Method: PUT
-Endpoint: /rbf
-Description: Updates the fees for regional base fees (RBF), allowing them to be used in fee calculations.
-Request Body: RBFFeesDTO containing city, vehicle, and fee information.
+Method: PUT<br/>
+Endpoint: /rbf<br/>
+Description: Updates the fees for regional base fees (RBF), allowing them to be used in fee calculations.<br/>
+Request Body: RBFFeesDTO containing city, vehicle, and fee information.<br/>
 
 4. Update ATEF
-Method: PUT
-Endpoint: /atef
-Description: Updates the fees for air temperature fees (ATE), but these fees are not used directly in fee calculations without additional conditions in DeliveryService.
-Request Body: ATEFFeesDTO containing vehicle, temperature, and fee information.
+Method: PUT<br/>
+Endpoint: /atef<br/>
+Description: Updates the fees for air temperature fees (ATE), but these fees are not used directly in fee calculations without additional conditions in DeliveryService.<br/>
+Request Body: ATEFFeesDTO containing vehicle, temperature, and fee information.<br/>
 
 5. Update WSEF
-Method: PUT
-Endpoint: /wsef
-Description: Updates the fees for WSEFFees, but these fees are not used directly in fee calculations without additional conditions in DeliveryService.
-Request Body: WSEFFeesDTO containing vehicle, speed, and fee information.
+Method: PUT<br/>
+Endpoint: /wsef<br/>
+Description: Updates the fees for WSEFFees, but these fees are not used directly in fee calculations without additional conditions in DeliveryService.<br/>
+Request Body: WSEFFeesDTO containing vehicle, speed, and fee information.<br/>
 
 6. Update WPEF
-Method: PUT
-Endpoint: /wpef
-Description: Updates the fees for WPEFFees, allowing them to be used in fee calculations.
-Request Body: WPEFFeesDTO containing vehicle, weather, and fee information.
+Method: PUT<br/>
+Endpoint: /wpef<br/>
+Description: Updates the fees for WPEFFees, allowing them to be used in fee calculations.<br/>
+Request Body: WPEFFeesDTO containing vehicle, weather, and fee information.<br/>
 
 ## Bonuses
 As a bonus excersise, you can get fees depending on city, vehicle and date(optional) using REST interface endpoint.
