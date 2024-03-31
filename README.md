@@ -31,7 +31,6 @@ Delivery fee is calculated according to task. Fee calculations are based on pred
 REST interface endpoints allow to get fees depending on city, vehicle and date(optional), and add new fee values in the database.
 Every single requests is sent in a form http://localhost:8080/ + {endpointName}, where endpoint is the one specified in the mapping.
 Endpoints:
-Retrieve Delivery Fee by City and Vehicle
 
 1. Retrieve Delivery Fee by City and Vehicle
 Method: GET
