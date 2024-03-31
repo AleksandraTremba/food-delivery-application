@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd">
+    <changeSet id="1" author="altrem">
+        <createTable tableName="RBF_FEES">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="city" type="VARCHAR(255)"/>
+            <column name="vehicle" type="VARCHAR(255)"/>
+            <column name="fee" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <insert tableName="RBF_FEES">
+            <column name="city" value="Tallinn"/>
+            <column name="vehicle" value="Car"/>
+            <column name="fee" value="4.0"/>
+        </insert>
+        <insert tableName="RBF_FEES">
+            <column name="city" value="Tallinn"/>
+            <column name="vehicle" value="Scooter"/>
+            <column name="fee" value="3.5"/>
+        </insert>
+        <insert tableName="RBF_FEES">
+            <column name="city" value="Tallinn"/>
+            <column name="vehicle" value="Bike"/>
+            <column name="fee" value="3.0"/>
+        </insert>
+        <insert tableName="RBF_FEES">
+            <column name="city" value="Tartu"/>
+            <column name="vehicle" value="Car"/>
+            <column name="fee" value="3.5"/>
+        </insert>
+        <insert tableName="RBF_FEES">
+            <column name="city" value="Tartu"/>
+            <column name="vehicle" value="Scooter"/>
+            <column name="fee" value="3.0"/>
+        </insert>
+        <insert tableName="RBF_FEES">
+            <column name="city" value="Tartu"/>
+            <column name="vehicle" value="Bike"/>
+            <column name="fee" value="2.5"/>
+        </insert>
+        <insert tableName="RBF_FEES">
+            <column name="city" value="Pärnu"/>
+            <column name="vehicle" value="Car"/>
+            <column name="fee" value="3.0"/>
+        </insert>
+        <insert tableName="RBF_FEES">
+            <column name="city" value="Pärnu"/>
+            <column name="vehicle" value="Scooter"/>
+            <column name="fee" value="2.5"/>
+        </insert>
+        <insert tableName="RBF_FEES">
+            <column name="city" value="Pärnu"/>
+            <column name="vehicle" value="Bike"/>
+            <column name="fee" value="2.0"/>
+        </insert>
+
+    </changeSet>
+
+    <changeSet id="3" author="altrem">
+        <createTable tableName="ATEF_FEES">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="vehicle" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="temperature" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fee" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <insert tableName="ATEF_FEES">
+            <column name="vehicle" value="Scooter"/>
+            <column name="temperature" value="-10.0"/>
+            <column name="fee" value="1.0"/>
+        </insert>
+        <insert tableName="ATEF_FEES">
+            <column name="vehicle" value="Bike"/>
+            <column name="temperature" value="-10.0"/>
+            <column name="fee" value="1.0"/>
+        </insert>
+        <insert tableName="ATEF_FEES">
+            <column name="vehicle" value="Scooter"/>
+            <column name="temperature" value="0.0"/>
+            <column name="fee" value="0.5"/>
+        </insert>
+        <insert tableName="ATEF_FEES">
+            <column name="vehicle" value="Bike"/>
+            <column name="temperature" value="0.0"/>
+            <column name="fee" value="0.5"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="4" author="altrem">
+        <createTable tableName="WPEF_FEES">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="vehicle" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="weather" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fee" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <insert tableName="WPEF_FEES">
+            <column name="vehicle" value="Scooter"/>
+            <column name="weather" value="snow"/>
+            <column name="fee" value="1.0"/>
+        </insert>
+        <insert tableName="WPEF_FEES">
+            <column name="vehicle" value="Scooter"/>
+            <column name="weather" value="sleet"/>
+            <column name="fee" value="1.0"/>
+        </insert>
+        <insert tableName="WPEF_FEES">
+            <column name="vehicle" value="Bike"/>
+            <column name="weather" value="snow"/>
+            <column name="fee" value="1.0"/>
+        </insert>
+        <insert tableName="WPEF_FEES">
+            <column name="vehicle" value="Scooter"/>
+            <column name="weather" value="sleet"/>
+            <column name="fee" value="1.0"/>
+        </insert>
+        <insert tableName="WPEF_FEES">
+            <column name="vehicle" value="Scooter"/>
+            <column name="weather" value="rain"/>
+            <column name="fee" value="0.5"/>
+        </insert>
+        <insert tableName="WPEF_FEES">
+            <column name="vehicle" value="Bike"/>
+            <column name="weather" value="rain"/>
+            <column name="fee" value="0.5"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="5" author="altrem">
+        <createTable tableName="WSEF_FEES">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="vehicle" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="speed" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fee" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <insert tableName="WSEF_FEES">
+            <column name="vehicle" value="Bike"/>
+            <column name="speed" value="10.0"/>
+            <column name="fee" value="0.5"/>
+        </insert>
+    </changeSet>
+
+
+
+    <changeSet id="2" author="altrem">
+        <createSequence sequenceName="STATIONS_SEQ"/>
+        <createTable tableName="STATIONS">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="WMO" type="INTEGER"/>
+            <column name="temperature" type="DOUBLE"/>
+            <column name="wind_speed" type="DOUBLE"/>
+            <column name="weather_phenomenon" type="VARCHAR(255)"/>
+            <column name="timestamp" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
