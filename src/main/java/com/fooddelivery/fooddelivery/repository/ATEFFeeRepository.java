@@ -9,6 +9,6 @@ import java.util.Optional;
  * Repository interface for accessing air temperature fees (ATE) fee data.
  */
 public interface ATEFFeeRepository extends JpaRepository<ATEFFees, Long> {
-    Optional<ATEFFees> findByVehicleIgnoreCaseAndTemperature(String vehicle, double temperature);
+    Optional<ATEFFees> findFirstByVehicleIgnoreCaseAndTemperature(String vehicle, double temperature);
 
 }

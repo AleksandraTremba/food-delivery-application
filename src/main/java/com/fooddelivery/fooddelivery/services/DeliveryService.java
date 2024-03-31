@@ -81,7 +81,7 @@ public class DeliveryService {
      * @return RBF.
      */
     public Double getRBF(String city, String vehicle) {
-        Optional<RBFFees> feeOptional = rbfFeeRepository.findByCityIgnoreCaseAndVehicleIgnoreCase(city.toLowerCase(), vehicle.toLowerCase());
+        Optional<RBFFees> feeOptional = rbfFeeRepository.findFirstByCityIgnoreCaseAndVehicleIgnoreCase(city.toLowerCase(), vehicle.toLowerCase());
         return feeOptional.map(RBFFees::getFee).orElse(NO_FEE);
     }
     /**
@@ -108,11 +108,11 @@ public class DeliveryService {
             Double temperature = station.getTemperature();
             if (vehicle.equalsIgnoreCase(SCOOTER) || vehicle.equalsIgnoreCase(BIKE)) {
                 if (temperature < TEMPERATURE_MINUS_TEN) {
-                    Optional<ATEFFees> feeOptional = atefFeeRepository.findByVehicleIgnoreCaseAndTemperature(vehicle, TEMPERATURE_MINUS_TEN);
+                    Optional<ATEFFees> feeOptional = atefFeeRepository.findFirstByVehicleIgnoreCaseAndTemperature(vehicle, TEMPERATURE_MINUS_TEN);
                     return feeOptional.map(ATEFFees::getFee).orElse(NO_FEE);
                 }
                 if (temperature > TEMPERATURE_MINUS_TEN && temperature < TEMPERATURE_ZERO) {
-                    Optional<ATEFFees> feeOptional = atefFeeRepository.findByVehicleIgnoreCaseAndTemperature(vehicle, TEMPERATURE_ZERO);
+                    Optional<ATEFFees> feeOptional = atefFeeRepository.findFirstByVehicleIgnoreCaseAndTemperature(vehicle, TEMPERATURE_ZERO);
                     return feeOptional.map(ATEFFees::getFee).orElse(NO_FEE);
                 }
             }
@@ -148,7 +148,7 @@ public class DeliveryService {
             Double speed = station.getWindSpeed();
             if (vehicle.equalsIgnoreCase(BIKE)) {
                 if (speed > WIND_SPEED_10 && speed < WIND_SPEED_20) {
-                    Optional<WSEFFees> feeOptional = wsefFeeRepository.findBySpeed(WIND_SPEED_10);
+                    Optional<WSEFFees> feeOptional = wsefFeeRepository.findFirstBySpeed(WIND_SPEED_10);
                     return feeOptional.map(WSEFFees::getFee).orElse(NO_FEE);
                 }
                 if (speed > WIND_SPEED_20) {
@@ -192,7 +192,7 @@ public class DeliveryService {
                 if (element.equalsIgnoreCase(WEATHER_PHENOMENON_GLAZE) || element.equalsIgnoreCase(WEATHER_PHENOMENON_HAIL) || element.equalsIgnoreCase(WEATHER_PHENOMENON_THUNDER)) {
                     throw new IOException("Usage of selected vehicle type is forbidden");
                 }
-                Optional<WPEFFees> feeOptional = wpefFeeRepository.findByVehicleIgnoreCaseAndWeatherIgnoreCase(vehicle, element.toLowerCase());
+                Optional<WPEFFees> feeOptional = wpefFeeRepository.findFirstByVehicleIgnoreCaseAndWeatherIgnoreCase(vehicle, element.toLowerCase());
                 if (feeOptional.isEmpty()) {
                     continue;
                 } else {

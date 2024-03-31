@@ -9,6 +9,6 @@ import java.util.Optional;
  * Repository interface for accessing weather phenomenon fees (WPE) fee data.
  */
 public interface WPEFFeeRepository extends JpaRepository<WPEFFees, Long> {
-    Optional<WPEFFees> findByVehicleIgnoreCaseAndWeatherIgnoreCase(String vehicle, String weather);
+    Optional<WPEFFees> findFirstByVehicleIgnoreCaseAndWeatherIgnoreCase(String vehicle, String weather);
 
 }
