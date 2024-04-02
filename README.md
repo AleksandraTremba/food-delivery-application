@@ -17,6 +17,7 @@ Stations database table store this information about a weather station:
 * Wind speed
 * Weather phenomenon
 * Timestamp of the observations
+<br/>
 Additional tables are implemented to store every type of fee and their values.
 
 
