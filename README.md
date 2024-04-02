@@ -11,12 +11,12 @@ Application designed specifically for the trial task
 
 ## Database
 Stations database table store this information about a weather station:
-• Name of the station
-• WMO code of the station
-• Air temperature
-• Wind speed
-• Weather phenomenon
-• Timestamp of the observations
+* Name of the station
+* WMO code of the station
+* Air temperature
+* Wind speed
+* Weather phenomenon
+* Timestamp of the observations
 Additional tables are implemented to store every type of fee and their values.
 
 
